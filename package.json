@@ -14,12 +14,30 @@
     "http",
     "service",
     "builds",
-    "angular"
+    "angular",
+    "angular2",
+    "angular4"
   ],
   "author": "Máximo Sojo <maxsojo13@gmail.com> (http://maxtoan.github.io/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/maxtoan/http-service-builds/issues"
   },
-  "homepage": "https://github.com/maxtoan/http-service-builds#readme"
+  "homepage": "https://github.com/maxtoan/http-service-builds#readme",
+  "peerDependencies": {
+    "@angular/http": "^5.0.0",
+    "@angular/core": "^5.0.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.6.7",
+    "@angular/common": "5.2.3",
+    "@angular/compiler": "5.2.3",
+    "@angular/compiler-cli": "5.2.3",
+    "@angular/core": "5.2.3",
+    "@angular/http": "5.2.3",
+    "@angular/platform-browser": "5.2.3",
+    "@angular/platform-browser-dynamic": "5.2.3",
+    "@angular/platform-server": "5.2.3",
+    "@angular/router": "5.2.3"
+  }
 }

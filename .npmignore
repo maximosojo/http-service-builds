@@ -1,0 +1,4 @@
+.npmignore
+CHANGELOG.md
+src/node_modules
+debug.log
