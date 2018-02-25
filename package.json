@@ -6,6 +6,7 @@
   "scripts": {
     "lint":"eslint bundles/http-service-builds.umd.js"
   },
+  "typings": "./bundles/http-service-builds.umd.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maxtoan/http-service-builds.git"
