@@ -2,7 +2,7 @@
   "name": "http-service-builds",
   "version": "0.1.0",
   "description": "The service builds for http",
-  "main": "index.js",
+  "main": "bundles/http-service-builds.umd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
