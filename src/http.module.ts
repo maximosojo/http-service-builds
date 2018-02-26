@@ -1,9 +1,26 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpComponent } from './http.component';
-var HttpModule = (function () {
-    function HttpModule() {
+import { HttpService } from './http.service';
+
+@NgModule({
+	imports:[CommonModule],
+	declarations:[],
+	exports:[]
+})
+
+export class HttpModule { 
+	static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: HttpModule,
+            providers: [HttpService]
+        }
     }
-    return HttpModule;
-}());
-export { HttpModule };
+
+    static forChild(): ModuleWithProviders {
+        return {
+            ngModule: HttpModule,
+            providers: []
+        }
+    }
+}
