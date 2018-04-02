@@ -13,13 +13,13 @@ var HttpComponent = (function () {
     }
     HttpComponent.prototype.ngOnInit = function () {
     };
+    HttpComponent = __decorate([
+        Component({
+            selector: 'http-component',
+        }),
+        __metadata("design:paramtypes", [])
+    ], HttpComponent);
     return HttpComponent;
 }());
-HttpComponent = __decorate([
-    Component({
-        selector: 'http-component',
-    }),
-    __metadata("design:paramtypes", [])
-], HttpComponent);
 export { HttpComponent };
 //# sourceMappingURL=http.component.js.map

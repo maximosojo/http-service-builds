@@ -12,11 +12,11 @@ import 'rxjs/add/operator/share';
 var HttpService = (function () {
     function HttpService() {
     }
+    HttpService = __decorate([
+        Injectable(),
+        __metadata("design:paramtypes", [])
+    ], HttpService);
     return HttpService;
 }());
-HttpService = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [])
-], HttpService);
 export { HttpService };
 //# sourceMappingURL=http.service.js.map

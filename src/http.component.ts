@@ -1,13 +1,11 @@
-import {Component, Input, Output, ViewChild, ViewContainerRef, EventEmitter,
-    ComponentFactoryResolver, ChangeDetectorRef, OnInit, AfterViewInit
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'http-component',
 })
 
-export class HttpComponent implements OnInit, AfterViewInit {
-	
+export class HttpComponent {
+
 	constructor() {}
 
 	ngOnInit() {

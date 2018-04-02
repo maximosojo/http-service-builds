@@ -2,13 +2,10 @@
   "name": "http-service-builds",
   "version": "0.1.0",
   "description": "The service builds for http",
-  "main": "bundles/http-service-builds.umd.js",
-  "module": "http-service-builds.js",
-  "typings": "http-service-builds.d.ts",
+  "main": "dist/http-service-builds.ts",
   "scripts": {
     "build": "rm -rf dist && tsc"
   },
-  "typings": "./bundles/http-service-builds.umd.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maxtoan/http-service-builds.git"
@@ -27,21 +24,12 @@
     "url": "https://github.com/maxtoan/http-service-builds/issues"
   },
   "homepage": "https://github.com/maxtoan/http-service-builds#readme",
-  "peerDependencies": {
-    "@angular/http": "^4.4.6",
-    "@angular/core": "^4.4.6"
-  },
   "devDependencies": {
-    "@angular/cli": "1.6.7",
-    "@angular/common": "^4.4.6",
-    "@angular/compiler": "^4.4.6",
-    "@angular/core": "^4.4.6",
-    "@angular/forms": "^4.4.6",
-    "@angular/http": "^4.4.6",    
-    "@angular/router": "^4.4.6"
+    "typescript": "^2.3.3"
   },
   "dependencies": {
     "@angular/core": "^4.1.2",
+    "@angular/http": "^4.1.2",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   }

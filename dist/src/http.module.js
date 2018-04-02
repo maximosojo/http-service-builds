@@ -5,32 +5,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { HttpComponent } from './http.component';
 import { HttpService } from './http.service';
-var HttpModule = HttpModule_1 = (function () {
+var HttpModule = (function () {
     function HttpModule() {
     }
-    HttpModule.forRoot = function () {
-        return {
-            ngModule: HttpModule_1,
-            providers: [HttpService]
-        };
-    };
-    HttpModule.forChild = function () {
-        return {
-            ngModule: HttpModule_1,
-            providers: []
-        };
-    };
+    HttpModule = __decorate([
+        NgModule({
+            imports: [],
+            declarations: [
+                HttpComponent
+            ],
+            exports: [
+                HttpComponent
+            ],
+            providers: [
+                HttpService
+            ]
+        })
+    ], HttpModule);
     return HttpModule;
 }());
-HttpModule = HttpModule_1 = __decorate([
-    NgModule({
-        imports: [CommonModule],
-        declarations: [],
-        exports: []
-    })
-], HttpModule);
 export { HttpModule };
-var HttpModule_1;
 //# sourceMappingURL=http.module.js.map

@@ -1,5 +1,4 @@
-import { OnInit, AfterViewInit } from '@angular/core';
-export declare class HttpComponent implements OnInit, AfterViewInit {
+export declare class HttpComponent {
     constructor();
     ngOnInit(): void;
 }
