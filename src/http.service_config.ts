@@ -8,7 +8,7 @@ import { writeFile, readFile } from "fs-";
 @Injectable()
 export class HttpServiceConfig {
 	
-	object:string[];
+	object:any[];
 
     constructor() {
     	try {
@@ -22,7 +22,9 @@ export class HttpServiceConfig {
   	}
 
     public getPath(){
-    	return this.object;
+        let response:any = [];
+        response = this.object;
+    	return response.path;
     }
 }
 

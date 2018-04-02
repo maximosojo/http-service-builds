@@ -1,10 +1,9 @@
 import "rxjs/Rx";
 import 'rxjs/add/operator/map';
 export declare class HttpServiceConfig {
-    object: object;
+    object: any[];
     constructor();
-    private ngOnInit();
-    getPath(): string;
+    getPath(): any;
 }
-declare const _default: () => string;
+declare const _default: () => any;
 export default _default;

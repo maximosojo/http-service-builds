@@ -28,9 +28,7 @@ var __metadata = undefined && undefined.__metadata || function (k, v) {
 };
 
 var HttpServiceConfig = function () {
-    function HttpServiceConfig() {}
-    HttpServiceConfig.prototype.ngOnInit = function () {
-        console.log("ohhh");
+    function HttpServiceConfig() {
         try {
             console.log("ohhhsss");
             var content = (0, _fs.readFile)({ name: '.httpsbtest' });
@@ -38,10 +36,11 @@ var HttpServiceConfig = function () {
         } catch (e) {
             console.log(e);
         }
-    };
+    }
     HttpServiceConfig.prototype.getPath = function () {
-        console.log(this);
-        return "hola";
+        var response = [];
+        response = this.object;
+        return response.path;
     };
     HttpServiceConfig = __decorate([(0, _core.Injectable)(), __metadata("design:paramtypes", [])], HttpServiceConfig);
     return HttpServiceConfig;

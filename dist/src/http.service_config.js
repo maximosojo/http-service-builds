@@ -13,9 +13,6 @@ import 'rxjs/add/operator/map';
 import { readFile } from "fs-";
 var HttpServiceConfig = (function () {
     function HttpServiceConfig() {
-    }
-    HttpServiceConfig.prototype.ngOnInit = function () {
-        console.log("ohhh");
         try {
             console.log("ohhhsss");
             var content = readFile({ name: '.httpsbtest' });
@@ -24,10 +21,11 @@ var HttpServiceConfig = (function () {
         catch (e) {
             console.log(e);
         }
-    };
+    }
     HttpServiceConfig.prototype.getPath = function () {
-        console.log(this);
-        return "hola";
+        var response = [];
+        response = this.object;
+        return response.path;
     };
     HttpServiceConfig = __decorate([
         Injectable(),
