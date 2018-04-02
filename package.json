@@ -6,7 +6,7 @@
   "module": "http-service-builds.js",
   "typings": "http-service-builds.d.ts",
   "scripts": {
-    "lint":"eslint bundles/http-service-builds.umd.js"
+    "build": "rm -rf dist && tsc"
   },
   "typings": "./bundles/http-service-builds.umd.js",
   "repository": {
@@ -39,5 +39,10 @@
     "@angular/forms": "^4.4.6",
     "@angular/http": "^4.4.6",    
     "@angular/router": "^4.4.6"
+  },
+  "dependencies": {
+    "@angular/core": "^4.1.2",
+    "rxjs": "^5.4.2",
+    "zone.js": "^0.8.14"
   }
 }
