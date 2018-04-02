@@ -12,11 +12,14 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import "rxjs/Rx";
 import 'rxjs/add/operator/map';
+import { HttpServiceConfig } from './http.service_config';
 var HttpService = (function () {
-    function HttpService(http) {
+    function HttpService(http, hsconfig) {
         this.http = http;
+        this.hsconfig = hsconfig;
         this.apiRoot = '';
         var token = [];
+        this.apiRoot = hsconfig.getPath();
         this.headers = new Headers({ 'Content-Type': 'application/json',
             'Accept': 'q=0.8;application/json;q=0.9' });
         this.options = new RequestOptions({ headers: this.headers });
@@ -37,14 +40,18 @@ var HttpService = (function () {
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
+    HttpService.prototype.getApiRoot = function () {
+        return this.apiRoot;
+    };
     HttpService.prototype.handleError = function (error) {
         return Observable.throw(error.json().error || 'Server error');
     };
     HttpService = __decorate([
         Injectable(),
-        __metadata("design:paramtypes", [Http])
+        __metadata("design:paramtypes", [Http, HttpServiceConfig])
     ], HttpService);
     return HttpService;
 }());
 export { HttpService };
+export default HttpService.prototype.getApiRoot;
 //# sourceMappingURL=http.service.js.map
