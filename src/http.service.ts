@@ -1,12 +1,33 @@
 import { Injectable } from '@angular/core';
+import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/share';
+import "rxjs/Rx";
+import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class HttpService {
-	/**
-     * Creates an instance of HttpService.
-     */
-    constructor() {}
+	headers: Headers;
+    options: RequestOptions;
+    apiURL: string;
+    apiRoot: string = '';
+
+    constructor(private http: Http) {
+      let token:any = [];
+      this.headers = new Headers({ 'Content-Type': 'application/json', 
+                                     'Accept': 'q=0.8;application/json;q=0.9'});
+      this.options = new RequestOptions({ headers: this.headers });
+  	}
+
+  	public post(url,parameters){
+      
+    }
+
+    public get(url){
+      
+    }
+
+    public handleError(error: Response) {
+      return Observable.throw(error.json().error || 'Server error');
+    }
 }

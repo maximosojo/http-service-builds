@@ -8,15 +8,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/share';
+import { Http, Headers, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import "rxjs/Rx";
+import 'rxjs/add/operator/map';
 var HttpService = (function () {
-    function HttpService() {
+    function HttpService(http) {
+        this.http = http;
+        this.apiRoot = 'http://tconin.dev/app_dev.php/';
+        var token = [];
+        this.headers = new Headers({ 'Content-Type': 'application/json',
+            'Accept': 'q=0.8;application/json;q=0.9' });
+        this.options = new RequestOptions({ headers: this.headers });
     }
-    HttpService = __decorate([
-        Injectable(),
-        __metadata("design:paramtypes", [])
-    ], HttpService);
+    HttpService.prototype.post = function (url, parameters) {
+    };
+    HttpService.prototype.get = function (url) {
+    };
+    HttpService.prototype.handleError = function (error) {
+        return Observable.throw(error.json().error || 'Server error');
+    };
     return HttpService;
 }());
+HttpService = __decorate([
+    Injectable(),
+    __metadata("design:paramtypes", [Http])
+], HttpService);
 export { HttpService };
 //# sourceMappingURL=http.service.js.map
