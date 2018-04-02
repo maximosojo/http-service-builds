@@ -1,4 +1,5 @@
 import { Http, Headers, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import "rxjs/Rx";
 import 'rxjs/add/operator/map';
 export declare class HttpService {
@@ -8,7 +9,7 @@ export declare class HttpService {
     apiURL: string;
     apiRoot: string;
     constructor(http: Http);
-    private post(url, parameters);
-    private get(url);
+    post(url: any, parameters: any): Observable<any>;
+    get(url: any): Observable<any>;
     private handleError(error);
 }
