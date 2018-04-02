@@ -10,21 +10,21 @@ import { HttpService } from './http.service';
 var HttpModule = (function () {
     function HttpModule() {
     }
+    HttpModule = __decorate([
+        NgModule({
+            imports: [],
+            declarations: [
+                HttpComponent
+            ],
+            exports: [
+                HttpComponent
+            ],
+            providers: [
+                HttpService
+            ]
+        })
+    ], HttpModule);
     return HttpModule;
 }());
-HttpModule = __decorate([
-    NgModule({
-        imports: [],
-        declarations: [
-            HttpComponent
-        ],
-        exports: [
-            HttpComponent
-        ],
-        providers: [
-            HttpService
-        ]
-    })
-], HttpModule);
 export { HttpModule };
 //# sourceMappingURL=http.module.js.map

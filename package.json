@@ -4,7 +4,10 @@
   "description": "The service builds for http",
   "main": "dist/http-service-builds.ts",
   "scripts": {
-    "build": "rm -rf dist && tsc"
+    "lint": "eslint dist/http-service-builds.ts",
+    "prebuild": "npm run lint",
+    "build": "rm -rf dist && tsc",
+    "pretest": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,9 @@
   },
   "homepage": "https://github.com/maxtoan/http-service-builds#readme",
   "devDependencies": {
+    "eslint": "2.13.1",
+    "eslint-config-airbnb-base": "3.0.1",
+    "eslint-plugin-import": "1.9.2",
     "typescript": "^2.3.3"
   },
   "dependencies": {

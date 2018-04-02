@@ -15,24 +15,36 @@ import 'rxjs/add/operator/map';
 var HttpService = (function () {
     function HttpService(http) {
         this.http = http;
-        this.apiRoot = 'http://tconin.dev/app_dev.php/';
+        this.apiRoot = '';
         var token = [];
         this.headers = new Headers({ 'Content-Type': 'application/json',
             'Accept': 'q=0.8;application/json;q=0.9' });
         this.options = new RequestOptions({ headers: this.headers });
     }
     HttpService.prototype.post = function (url, parameters) {
+        var json = [];
+        if (!parameters) {
+            var parameters_1 = {};
+        }
+        var apiURL = "" + this.apiRoot;
+        return this.http.post(apiURL + url, parameters, this.options)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
     };
     HttpService.prototype.get = function (url) {
+        var apiURL = "" + this.apiRoot;
+        return this.http.get(apiURL + url, this.options)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
     };
     HttpService.prototype.handleError = function (error) {
         return Observable.throw(error.json().error || 'Server error');
     };
+    HttpService = __decorate([
+        Injectable(),
+        __metadata("design:paramtypes", [Http])
+    ], HttpService);
     return HttpService;
 }());
-HttpService = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [Http])
-], HttpService);
 export { HttpService };
 //# sourceMappingURL=http.service.js.map

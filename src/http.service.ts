@@ -19,15 +19,25 @@ export class HttpService {
       this.options = new RequestOptions({ headers: this.headers });
   	}
 
-  	public post(url,parameters){
-      
+  	private post(url,parameters){
+      let json = [];
+      if (!parameters) {
+        let parameters = {};
+      }
+      let apiURL = `${this.apiRoot}`;
+      return this.http.post(apiURL+url, parameters, this.options)
+      .map((res:Response) => res.json())
+      .catch(this.handleError);
     }
 
-    public get(url){
-      
+    private get(url){
+      let apiURL = `${this.apiRoot}`;
+      return this.http.get(apiURL+url, this.options)
+      .map((res:Response) => res.json())
+      .catch(this.handleError);
     }
 
-    public handleError(error: Response) {
+    private handleError(error: Response) {
       return Observable.throw(error.json().error || 'Server error');
     }
 }
