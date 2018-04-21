@@ -1,6 +1,6 @@
 {
   "name": "http-service-builds",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The service builds for http",
   "main": "bundles/http-service-builds.umd.js",
   "module": "http-service-builds.js",
