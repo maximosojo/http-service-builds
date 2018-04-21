@@ -1,26 +1,18 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { HttpComponent } from './http.component';
 import { HttpService } from './http.service';
 
 @NgModule({
-	imports:[CommonModule],
-	declarations:[],
-	exports:[]
+	imports:[],
+	declarations:[
+        HttpComponent
+    ],
+	exports:[
+        HttpComponent
+    ],
+    providers: [
+        HttpService
+    ]
 })
 
-export class HttpModule { 
-	static forRoot(): ModuleWithProviders {
-        return {
-            ngModule: HttpModule,
-            providers: [HttpService]
-        }
-    }
-
-    static forChild(): ModuleWithProviders {
-        return {
-            ngModule: HttpModule,
-            providers: []
-        }
-    }
-}
+export class HttpModule {}

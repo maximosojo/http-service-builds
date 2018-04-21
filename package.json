@@ -2,13 +2,14 @@
   "name": "http-service-builds",
   "version": "0.1.1",
   "description": "The service builds for http",
-  "main": "bundles/http-service-builds.umd.js",
-  "module": "http-service-builds.js",
-  "typings": "http-service-builds.d.ts",
+  "main": "dist/http-service-builds.ts",
   "scripts": {
-    "lint":"eslint bundles/http-service-builds.umd.js"
+    "lint": "eslint dist/http-service-builds.ts",
+    "prebuild": "npm run lint",
+    "build": "rm -rf dist && tsc && babel dist --out-dir build",
+    "pretest": "npm run build",
+    "test": "babel-node test/http-service-builds.ts | tap-spec"
   },
-  "typings": "./bundles/http-service-builds.umd.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maxtoan/http-service-builds.git"
@@ -27,17 +28,26 @@
     "url": "https://github.com/maxtoan/http-service-builds/issues"
   },
   "homepage": "https://github.com/maxtoan/http-service-builds#readme",
-  "peerDependencies": {
-    "@angular/http": "^4.4.6",
-    "@angular/core": "^4.4.6"
-  },
   "devDependencies": {
-    "@angular/cli": "1.6.7",
-    "@angular/common": "^4.4.6",
-    "@angular/compiler": "^4.4.6",
-    "@angular/core": "^4.4.6",
-    "@angular/forms": "^4.4.6",
-    "@angular/http": "^4.4.6",    
-    "@angular/router": "^4.4.6"
+    "babel": "6.5.2",
+    "babel-cli": "6.10.1",
+    "babel-core": "6.10.4",
+    "babel-eslint": "6.1.0",
+    "babel-preset-es2015": "6.9.0",
+    "eslint": "2.13.1",
+    "eslint-config-airbnb-base": "3.0.1",
+    "eslint-plugin-import": "1.9.2",
+    "tap-spec": "4.1.1",
+    "tape": "^4.9.0",
+    "typescript": "^2.3.3"
+  },
+  "dependencies": {
+    "@angular/common": "^4.1.2",
+    "@angular/core": "^4.1.2",
+    "@angular/http": "^4.1.2",
+    "@angular/platform-browser": "^4.1.2",
+    "fs-": "^1.0.0",
+    "rxjs": "^5.4.2",
+    "zone.js": "^0.8.14"
   }
 }
